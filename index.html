@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>U.S. Citizenship Master — New Jersey</title><script src="https://cdn.tailwindcss.com"></script>
+<style>.view{display:none}.view.active{display:block}.card.active{border-color:#2563eb;background:#eff6ff}.good{background:#f0fdf4;border-color:#16a34a}.bad{background:#fef2f2;border-color:#dc2626}</style></head>
+<body class="bg-slate-50 text-slate-900">
+<header class="sticky top-0 z-40 border-b bg-white/95 backdrop-blur"><div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3"><div class="grid h-11 w-11 place-items-center rounded-2xl bg-blue-700 text-2xl">🇺🇸</div><div><b>U.S. CITIZENSHIP MASTER</b><p id="sub" class="text-xs text-slate-500"></p></div></div>
+<nav class="hidden gap-1 md:flex"><button data-v="study" class="nav rounded-xl px-3 py-2 font-bold" id="navStudy"></button><button data-v="exam" class="nav rounded-xl px-3 py-2 font-bold" id="navExam"></button><button data-v="cards" class="nav rounded-xl px-3 py-2 font-bold" id="navCards"></button><button data-v="mistakes" class="nav rounded-xl px-3 py-2 font-bold" id="navMist"></button></nav>
+<button id="lang" class="rounded-xl bg-slate-900 px-4 py-2 font-black text-white">ES</button></div></header>
+
+<section class="bg-gradient-to-br from-blue-950 via-blue-700 to-red-600 text-white"><div class="mx-auto grid max-w-7xl gap-8 px-4 py-16 lg:grid-cols-[1.2fr_.8fr]">
+<div><span id="heroBadge" class="rounded-full bg-white/15 px-3 py-1 text-sm font-bold"></span><h1 id="hero" class="mt-5 text-4xl font-black leading-tight sm:text-6xl"></h1><p id="heroP" class="mt-5 max-w-2xl text-lg leading-8"></p>
+<div class="mt-7 flex flex-wrap gap-3"><button data-v="study" id="start" class="nav rounded-2xl bg-white px-6 py-3 font-black text-blue-800"></button><button data-v="exam" id="practice" class="nav rounded-2xl border border-white/40 px-6 py-3 font-black"></button></div></div>
+<div class="rounded-3xl bg-white/10 p-6 ring-1 ring-white/20"><p id="progressLabel" class="font-bold uppercase tracking-widest"></p><div class="mt-4 flex items-end justify-between"><span id="pct" class="text-5xl font-black">0%</span><span id="progressCount"></span></div><div class="mt-4 h-4 rounded-full bg-white/20"><div id="bar" class="h-full rounded-full bg-white"></div></div>
+<div class="mt-6 grid grid-cols-3 gap-3 text-center"><div class="rounded-2xl bg-white/10 p-3"><b class="block text-2xl">128</b><span id="officialLabel"></span></div><div class="rounded-2xl bg-white/10 p-3"><b class="block text-2xl">8</b><span id="njLabel"></span></div><div class="rounded-2xl bg-white/10 p-3"><b class="block text-2xl">20/12</b><span id="examLabel"></span></div></div></div></div></section>
+
+<main class="mx-auto max-w-7xl px-4 py-10">
+<section id="study" class="view active"><div class="mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div><p id="route" class="font-bold text-blue-700"></p><h2 id="studyTitle" class="text-3xl font-black"></h2></div><div class="flex flex-col gap-2 sm:flex-row"><select id="filter" class="rounded-xl border bg-white px-3 py-3"></select><input id="search" class="rounded-xl border px-4 py-3"></div></div>
+<div class="grid gap-7 lg:grid-cols-[380px_1fr]"><aside class="rounded-3xl border bg-white p-3 shadow-xl"><div id="list" class="max-h-[72vh] space-y-2 overflow-auto"></div></aside>
+<article class="rounded-3xl border bg-white p-7 shadow-xl sm:p-10"><div class="flex flex-wrap items-center justify-between gap-3"><span id="number" class="rounded-full bg-blue-100 px-3 py-1 font-bold text-blue-800"></span><button id="learned" class="rounded-xl bg-emerald-600 px-4 py-2 font-bold text-white"></button></div>
+<p id="question" class="mt-7 text-3xl font-black leading-tight"></p><div class="mt-6 rounded-2xl bg-emerald-50 p-6"><p id="answerLabel" class="font-bold text-emerald-800"></p><p id="answer" class="mt-2 text-2xl font-black text-emerald-950"></p></div>
+<div class="mt-6 rounded-2xl bg-amber-50 p-6"><p id="memoryLabel" class="font-black text-amber-900"></p><p id="fact" class="mt-2 leading-7 text-amber-950"></p></div>
+<div class="mt-7 flex justify-between"><button id="prev" class="rounded-xl border px-5 py-3 font-bold">←</button><button id="next" class="rounded-xl bg-blue-700 px-5 py-3 font-bold text-white">→</button></div></article></div></section>
+
+<section id="exam" class="view mx-auto max-w-5xl"><div class="rounded-3xl border bg-white p-7 shadow-xl sm:p-10"><div><p id="simLabel" class="font-bold text-blue-700"></p><h2 id="examTitle" class="text-3xl font-black"></h2><p id="examHelp" class="mt-2 text-slate-600"></p></div>
+<div class="mt-6 grid gap-3 sm:grid-cols-3"><button data-mode="official" class="mode rounded-xl bg-blue-700 px-4 py-3 font-bold text-white" id="officialMode"></button><button data-mode="all" class="mode rounded-xl border px-4 py-3 font-bold" id="allMode"></button><button data-mode="nj" class="mode rounded-xl border px-4 py-3 font-bold" id="njMode"></button></div>
+<div class="mt-6 flex justify-between"><span id="examCount" class="rounded-full bg-slate-100 px-4 py-2 font-bold"></span><span id="examScore" class="font-bold"></span></div><div class="mt-4 h-3 rounded-full bg-slate-100"><div id="examBar" class="h-full rounded-full bg-blue-700"></div></div><div id="examBox" class="mt-8"></div></div></section>
+
+<section id="cards" class="view mx-auto max-w-4xl text-center"><h2 id="cardsTitle" class="text-3xl font-black"></h2><p id="cardsHelp" class="mt-2 text-slate-600"></p><div id="flash" class="mx-auto mt-8 grid min-h-96 max-w-3xl cursor-pointer place-items-center rounded-3xl bg-gradient-to-br from-slate-950 to-blue-900 p-10 text-white shadow-xl"><div><p id="flashLabel" class="font-bold uppercase tracking-widest text-blue-200"></p><p id="flashText" class="mt-6 text-3xl font-black leading-tight"></p></div></div><div class="mt-6 flex justify-center gap-3"><button id="cardPrev" class="rounded-xl border bg-white px-5 py-3 font-bold">←</button><button id="cardNext" class="rounded-xl bg-blue-700 px-5 py-3 font-bold text-white">→</button></div></section>
+
+<section id="mistakes" class="view mx-auto max-w-4xl"><div class="flex justify-between"><h2 id="mistTitle" class="text-3xl font-black"></h2><button id="clearMist" class="rounded-xl border px-4 py-2 font-bold"></button></div><div id="mistList" class="mt-6 space-y-4"></div></section>
+</main>
+<footer class="border-t bg-white"><div id="notice" class="mx-auto max-w-7xl px-4 py-8 text-sm leading-6 text-slate-500"></div></footer>
+<script src="app.js"></script></body></html>
